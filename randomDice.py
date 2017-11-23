@@ -1,6 +1,7 @@
 from sense_hat import SenseHat
 from time import sleep
 from random import randint
+import picamera
 
 sense = SenseHat()
 
@@ -55,6 +56,9 @@ for i in range(0, 20):
   theNumber = randint(1, 6)
   show_number(theNumber, randint(0, 255), randint(0, 255), randint(0, 255))
   sleep(0.2)
+
+camera = picamera.PiCamera()
+camera.capture('image.jpg')
 
 sleep(10)
 
