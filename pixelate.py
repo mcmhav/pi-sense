@@ -84,6 +84,10 @@ def test():
 
 test()
 
+sleep(10)
+
+sense.clear()
+
 
 def border():
     backgroundColor = (0,)*3
