@@ -1,5 +1,4 @@
 from sense_hat import SenseHat
-from sys import argv
 import argparse
 
 parser = argparse.ArgumentParser(description='Sending a message.')
