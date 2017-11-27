@@ -41,7 +41,7 @@ image = image.crop(
 
 pixelSize = math.floor(image.size[0]/pixels)
 
-print(math.floor(image.size[0]/pixelSize))
+print(int(math.floor(image.size[0]/pixelSize)))
 print(math.floor(image.size[1]/pixelSize))
 
 image = image.resize(
