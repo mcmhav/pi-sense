@@ -3,10 +3,11 @@ import argparse
 
 parser = argparse.ArgumentParser(description='Sending a message.')
 parser.add_argument(
-    'message',
+    '--message',
     # metavar='N',
     type=str,
     # nargs='+',
+    dest='message'
     default='Hello world',
     help='The message to be shown'
 )
