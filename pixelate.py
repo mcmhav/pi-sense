@@ -1,6 +1,6 @@
-from sense_hat import SenseHat
 from PIL import Image
 import math
+from sense_hat import SenseHat
 import picamera
 
 camera = picamera.PiCamera()
