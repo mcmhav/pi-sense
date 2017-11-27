@@ -24,11 +24,11 @@ new_width_max = image_width
 new_height_min = 0
 new_height_max = image_height
 if size_diff > 0:
-    new_width_min = math.fabs(size_diff) / 2
-    new_width_max = image_width - math.fabs(size_diff) / 2
+    new_width_min = int(math.fabs(size_diff) / 2)
+    new_width_max = int(image_width - math.fabs(size_diff) / 2)
 elif size_diff < 0:
-    new_height_min = math.fabs(size_diff) / 2
-    new_height_max = image_height - math.fabs(size_diff) / 2
+    new_height_min = int(math.fabs(size_diff) / 2)
+    new_height_max = int(image_height - math.fabs(size_diff) / 2)
 
 image = image.crop(
     (
