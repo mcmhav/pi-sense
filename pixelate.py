@@ -42,23 +42,23 @@ image = image.crop(
 pixelSize = math.floor(image.size[0]/pixels)
 
 print(int(math.floor(image.size[0]/pixelSize)))
-print(math.floor(image.size[1]/pixelSize))
+print(int(math.floor(image.size[1]/pixelSize)))
 print(Image.NEAREST)
 
-image = image.resize(
-    (
-        int(math.floor(image.size[0]/pixelSize)),
-        int(math.floor(image.size[1]/pixelSize))
-    ),
-    Image.NEAREST
-)
-image = image.resize(
-    (
-      int(math.floor(image.size[0]*pixelSize)),
-      int(math.floor(image.size[1]*pixelSize))
-    ),
-    Image.NEAREST
-)
+# image = image.resize(
+#     (
+#         int(math.floor(image.size[0]/pixelSize)),
+#         int(math.floor(image.size[1]/pixelSize))
+#     ),
+#     Image.NEAREST
+# )
+# image = image.resize(
+#     (
+#       int(math.floor(image.size[0]*pixelSize)),
+#       int(math.floor(image.size[1]*pixelSize))
+#     ),
+#     Image.NEAREST
+# )
 
 maxsize = (pixels, pixels)
 image.thumbnail(maxsize, Image.NEAREST)
