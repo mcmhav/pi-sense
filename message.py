@@ -7,7 +7,8 @@ parser.add_argument(
     # metavar='N',
     type=str,
     # nargs='+',
-    dest='message'
+    required=False,
+    dest='message',
     default='Hello world',
     help='The message to be shown'
 )
