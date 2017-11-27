@@ -60,6 +60,8 @@ print(Image.NEAREST)
 #     Image.NEAREST
 # )
 
+print(pixels)
+
 maxsize = (pixels, pixels)
 image.thumbnail(maxsize, Image.NEAREST)
 image.save('output.jpg')
