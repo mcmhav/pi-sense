@@ -1,6 +1,7 @@
 from PIL import Image
 import math
 from sense_hat import SenseHat
+from time import sleep
 import picamera
 
 camera = picamera.PiCamera()
