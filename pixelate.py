@@ -7,7 +7,6 @@ camera = picamera.PiCamera()
 camera.capture('image.jpg')
 
 pixels = 8
-backgroundColor = (0,)*3
 pixelSize = 100
 
 image = Image.open('image.jpg')
@@ -41,6 +40,9 @@ image = image.crop(
 )
 
 pixelSize = math.floor(image.size[0]/pixels)
+
+print(math.floor(image.size[0]/pixelSize))
+print(math.floor(image.size[1]/pixelSize))
 
 image = image.resize(
     (
@@ -87,6 +89,7 @@ test()
 
 
 def border():
+    backgroundColor = (0,)*3
     pixel = image.load()
 
     for i in range(0, image.size[0], pixelSize):
