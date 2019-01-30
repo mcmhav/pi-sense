@@ -79,12 +79,10 @@ def convert_image_to_pixels():
     return image, pixel_size
 
 
-def pixelate():
+def pixelate(sense):
     take_picture()
 
     image, pixel_size = convert_image_to_pixels()
-
-    sense = SenseHat()
 
     def test():
         pixel = image.load()
@@ -97,7 +95,7 @@ def pixelate():
 
     test()
 
-    sleep(10)
+    sleep(5)
 
     sense.clear()
 
@@ -114,4 +112,26 @@ def pixelate():
     # image.save('output.jpg')
 
 
-pixelate()
+SENSE = SenseHat()
+
+while True:
+    for event in SENSE.stick.get_events():
+        # Check if the joystick was pressed
+        if event.action == "pressed":
+            pixelate(SENSE)
+
+            # Check which direction
+            # if event.direction == "up":
+            #     sense.show_letter("U")      # Up arrow
+            # elif event.direction == "down":
+            #     sense.show_letter("D")      # Down arrow
+            # elif event.direction == "left":
+            #     sense.show_letter("L")      # Left arrow
+            # elif event.direction == "right":
+            #     sense.show_letter("R")      # Right arrow
+            # elif event.direction == "middle":
+            #     sense.show_letter("M")      # Enter key
+
+            # Wait a while and then clear the screen
+            sleep(10)
+            SENSE.clear()
