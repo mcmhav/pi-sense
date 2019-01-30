@@ -24,9 +24,9 @@ def take_picture():
 
     camera = picamera.PiCamera()
     try:
-        camera.start_preview()
+        # camera.start_preview()
         camera.capture(IMAGE_LOCATION)
-        camera.stop_preview()
+        # camera.stop_preview()
     finally:
         camera.close()
 
