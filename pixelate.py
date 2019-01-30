@@ -3,13 +3,32 @@ import math
 from sense_hat import SenseHat
 from time import sleep
 import picamera
+import time
 
 IMAGE_LOCATION = 'image.jpg'
 
 
 def take_picture():
+    # camera = picamera.PiCamera()
+    # camera.capture(IMAGE_LOCATION)
+
+    # with picamera.PiCamera() as camera:
+    #     camera.start_preview()
+    #     # camera.exposure_compensation = 2
+    #     # camera.exposure_mode = 'spotlight'
+    #     # camera.meter_mode = 'matrix'
+    #     # camera.image_effect = 'gpen'
+    #     # time.sleep(2)
+    #     camera.capture(IMAGE_LOCATION)
+    #     camera.stop_preview()
+
     camera = picamera.PiCamera()
-    camera.capture(IMAGE_LOCATION)
+    try:
+        camera.start_preview()
+        camera.capture(IMAGE_LOCATION)
+        camera.stop_preview()
+    finally:
+        camera.close()
 
 
 def convert_image_to_pixels():
@@ -80,7 +99,6 @@ def convert_image_to_pixels():
 
 
 def pixelate(sense):
-    take_picture()
 
     image, pixel_size = convert_image_to_pixels()
 
@@ -118,6 +136,8 @@ while True:
     for event in SENSE.stick.get_events():
         # Check if the joystick was pressed
         if event.action == "pressed":
+            take_picture()
+
             pixelate(SENSE)
 
             # Check which direction
