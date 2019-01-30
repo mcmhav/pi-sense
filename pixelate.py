@@ -5,7 +5,8 @@ from time import sleep
 import picamera
 import time
 
-IMAGE_LOCATION = 'image.jpg'
+# IMAGE_LOCATION = 'image.jpg'
+IMAGE_LOCATION = '/root/r/pi-sense/image.jpg'
 
 
 def take_picture():
