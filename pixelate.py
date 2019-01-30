@@ -80,6 +80,8 @@ def convert_image_to_pixels():
 
 
 def pixelate():
+    take_picture()
+
     image, pixel_size = convert_image_to_pixels()
 
     sense = SenseHat()
