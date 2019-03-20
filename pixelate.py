@@ -1,3 +1,4 @@
+import os
 from PIL import Image
 import math
 from sense_hat import SenseHat
@@ -6,7 +7,13 @@ import picamera
 import time
 
 # IMAGE_LOCATION = 'image.jpg'
-IMAGE_LOCATION = '/root/r/pi-sense/image.jpg'
+
+USER_HOME = os.path.expanduser('~')
+IMAGE_DIR = USER_HOME + '/images'
+if not os.path.exists(IMAGE_DIR):
+    os.makedirs(IMAGE_DIR)
+
+IMAGE_LOCATION = IMAGE_DIR + '/image.jpg'
 
 
 def take_picture():
