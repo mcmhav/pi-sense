@@ -16,27 +16,28 @@ if not os.path.exists(IMAGE_DIR):
 IMAGE_LOCATION = IMAGE_DIR + '/image.jpg'
 
 
-def take_picture():
+def take_picture(try_catch_method=False):
     # camera = picamera.PiCamera()
     # camera.capture(IMAGE_LOCATION)
 
-    # with picamera.PiCamera() as camera:
+    with picamera.PiCamera() as camera:
     #     camera.start_preview()
     #     # camera.exposure_compensation = 2
     #     # camera.exposure_mode = 'spotlight'
     #     # camera.meter_mode = 'matrix'
     #     # camera.image_effect = 'gpen'
     #     # time.sleep(2)
-    #     camera.capture(IMAGE_LOCATION)
+        camera.capture(IMAGE_LOCATION)
     #     camera.stop_preview()
 
-    camera = picamera.PiCamera()
-    try:
-        # camera.start_preview()
-        camera.capture(IMAGE_LOCATION)
-        # camera.stop_preview()
-    finally:
-        camera.close()
+    if try_catch_method:
+        camera = picamera.PiCamera()
+        try:
+            # camera.start_preview()
+            camera.capture(IMAGE_LOCATION)
+            # camera.stop_preview()
+        finally:
+            camera.close()
 
 
 def convert_image_to_pixels():
